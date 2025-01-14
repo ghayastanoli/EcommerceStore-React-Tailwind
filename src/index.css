@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: mont;
+    src: url('./assets/fonts/Montserrat/static/Montserrat-Medium.ttf');
+}
+@font-face {
+    font-family: jakarta;
+    src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf');
+}
+
+.font-mont{
+    font-family: mont;
+}
+.font-jak{
+    font-family: jakarta;
+}
