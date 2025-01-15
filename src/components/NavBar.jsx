@@ -47,7 +47,7 @@ const NavBar = () => {
               <img src={myImage2} alt="" className='h-[24px]' />
             </div>
           </div>
-          <div className='flex justify-center gap-6 font-mont list-none pt-2'>
+          <div className='flex justify-center gap-6 font-jak list-none pt-2'>
             <li>
               <Link to="/home-decoration" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Home Decoration</Link>
             </li>

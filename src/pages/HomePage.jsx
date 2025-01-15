@@ -1,12 +1,14 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import Listing from '../components/Listing'
+import CategoryCards from '../components/CategoryCards'
 
 
 const HomePage = () => {
   return (
     <>
     <Hero/>
+    <CategoryCards/>
     <Listing category="beauty" limit={4} />
   <Listing category="skin-care" limit={4} />
   <Listing category="fragrances" limit={4} />

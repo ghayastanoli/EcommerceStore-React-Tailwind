@@ -37,11 +37,13 @@ const Listing = ({ category, limit }) => {
             key={product.id}
             className="border rounded-lg shadow-md p-4 bg-orange-100 hover:bg-orange-200 transition duration-200 "
           >
+            <div className='flex justify-center'>
             <img
               src={product.thumbnail}
               alt={product.images}
-              className="w-full h-40 object-cover rounded-md"
+              className="  object-contain h-[200px] w-[200px] rounded-md "
             />
+            </div>
             <div className='px-1 py-4'>
               <div className='min-h-[60px]'>
                 <h2 className="text-md font-semibold mt-2 ">{product.title}</h2>
