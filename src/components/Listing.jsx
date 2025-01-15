@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import productsData from '../products.json';
 
-const Listing = ({ category, limit }) => { // Added limit prop
+const Listing = ({ category, limit }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    // Simulate fetching data from the JSON file
+    const fetchProducts = () => {
       try {
-        const res = await fetch('http://localhost:3000/products');
-        const data = await res.json();
-
         // Filter products by category if provided, otherwise show all products
         const filteredProducts = category
-          ? data.filter(product => product.category === category)
-          : data;
+          ? productsData.filter(product => product.category === category)
+          : productsData;
 
         // Apply limit if provided
         const limitedProducts = limit ? filteredProducts.slice(0, limit) : filteredProducts;
@@ -21,6 +20,7 @@ const Listing = ({ category, limit }) => { // Added limit prop
         console.error("Error fetching products:", error);
       }
     };
+
     fetchProducts();
   }, [category, limit]);
 
@@ -44,7 +44,7 @@ const Listing = ({ category, limit }) => { // Added limit prop
             />
             <div className='px-1 py-4'>
               <div className='min-h-[60px]'>
-              <h2 className="text-md font-semibold mt-2 ">{product.title}</h2>
+                <h2 className="text-md font-semibold mt-2 ">{product.title}</h2>
               </div>
               <div className='min-h-[90px]'>
                 <h4 className="text-sm font-normal mt-2 min-h-[150px]">{product.description}</h4>
