@@ -8,7 +8,7 @@ const NavBar = () => {
     <>
       <div className='flex px-8 p-5 text-white bg-orange-500 font-medium text-md border-white justify-center'>
         <div className=''>
-          <div className='flex justify-center gap-6 font-mont'>
+          <div className='flex justify-center gap-10 font-mont'>
             <div>
               <ul className='flex gap-6 '>
                 <li>
@@ -38,6 +38,9 @@ const NavBar = () => {
                 <li>
                   <Link to="/sale" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Sale</Link>
                 </li>
+                <li>
+              <Link to="/home-decoration" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Home Decoration</Link>
+                </li>
               </ul>
             </div>
             <div>
@@ -47,10 +50,8 @@ const NavBar = () => {
               <img src={myImage2} alt="" className='h-[24px]' />
             </div>
           </div>
-          <div className='flex justify-center gap-6 font-jak list-none pt-2'>
-            <li>
-              <Link to="/home-decoration" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Home Decoration</Link>
-            </li>
+          <div className='flex justify-center gap-10 font-jak list-none pt-2'>
+            
             <li>
               <Link to="/auto" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Auto</Link>
             </li>
