@@ -8,7 +8,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
-      <Route path="https://ecommerce-store-react-tailwind.vercel.app/all-products" element={<AllProducts/>} />
+      <Route path="/all-products" element={<AllProducts/>} />
     </Route>
   ) 
 );
