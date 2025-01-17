@@ -56,7 +56,7 @@ const NavBar = () => {
               <Link to="/auto" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Auto</Link>
             </li>
             <li>
-              <Link to="/jewelry-accessories" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Jewelry & Accessories</Link>
+              <Link to="/Jewelery & Accessories" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>Jewelry & Accessories</Link>
             </li>
             <li>
               <Link to="/all-products" className='hover:border-orange-600  transition duration-200 hover:rounded-md p-1 hover:bg-orange-600'>All Products</Link>
