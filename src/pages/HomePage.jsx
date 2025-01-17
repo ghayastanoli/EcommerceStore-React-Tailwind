@@ -4,7 +4,6 @@ import Listing from '../components/Listing'
 import CategoryCards from '../components/CategoryCards'
 import SaleBanner from '../components/SaleBanner'
 import Feedback from '../components/Feedback'
-import Footer from '../components/Footer'
 
 
 const HomePage = () => {
@@ -25,7 +24,6 @@ const HomePage = () => {
   <Listing category="mens-shirts" limit={4} />
   <SaleBanner/>
   <Feedback/>
-  <Footer/>
 
     </>
   )

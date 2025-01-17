@@ -9,11 +9,11 @@ import myImage6 from '../assets/rightarr.png';
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-  const [showFilters, setShowFilters] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [priceRange, setPriceRange] = useState('');
   const [shippingTime, setShippingTime] = useState('');
   const [rating, setRating] = useState('');
+  const [animateFilters, setAnimateFilters] = useState(false); // For triggering animation on load
 
   useEffect(() => {
     const fetchProducts = () => {
@@ -26,11 +26,10 @@ const AllProducts = () => {
     };
 
     fetchProducts();
-  }, []);
 
-  const toggleFilters = () => {
-    setShowFilters((prev) => !prev);
-  };
+    // Trigger animation after component mounts
+    setTimeout(() => setAnimateFilters(true), 100); // Timeout to ensure CSS animation triggers
+  }, []);
 
   const handlePriceChange = (range) => {
     setPriceRange(range);
@@ -86,84 +85,77 @@ const AllProducts = () => {
         </h2>
       </div>
       <div className="px-6 font-yak text-sm relative pb-2">
-        <div className="flex gap-4 items-center relative">
-          {/* All Filters */}
+        <div className={`flex gap-4 items-center relative transition-transform duration-700 ease-in-out ${animateFilters ? 'translate-x-0 opacity-100' : 'translate-x-[150%] opacity-0'}`}>
+          <div>
           <button
-            type="button"
-            onClick={toggleFilters}
-            className="bg-slate-200 hover:bg-slate-300 text-slate-800 p-1 font-medium px-4 rounded-lg flex items-center"
-          >
-            <img src={myImage} alt="" className="h-[18px] pr-2" /> All Filters
-            <img src={myImage6} alt="" className="h-[16px] pl-2" />
-          </button>
-
-          {/* Filters */}
-          <div
-            className={`flex gap-4 transition-all duration-500 ease-in-out transform ${
-              showFilters ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[150%] pointer-events-none'
-            }`}
-          >
-            {/* Price */}
-            <div className="relative group">
-              <button
-                type="button"
-                className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex"
-              >
-                <img src={myImage2} alt="" className="h-[18px] pr-2" /> Price
-                <img src={myImage5} alt="" className="h-[18px] pl-2" />
-              </button>
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
-                <ul className="p-2">
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('<50')}>{'<'} than 50$</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('50-100')}>Between 50$ & 100$</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('100-200')}>Between 100$ & 200$</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('>500')}>{'>'} than 500$</li>
-                </ul>
-              </div>
+              type="button"
+              className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex items-center"
+            >
+              <img src={myImage} alt="" className="h-[18px] pr-2" /> Filters
+              <img src={myImage6} alt="" className="h-[14px] pl-2" />
+            </button>
+          </div>
+          
+          {/* Price */}
+          <div className="relative group">
+            <button
+              type="button"
+              className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex"
+            >
+              <img src={myImage2} alt="" className="h-[18px] pr-2" /> Price
+              <img src={myImage5} alt="" className="h-[18px] pl-2" />
+            </button>
+            {/* Dropdown Menu */}
+            <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
+              <ul className="p-2">
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('<50')}>{'<'} than 50$</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('50-100')}>Between 50$ & 100$</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('100-200')}>Between 100$ & 200$</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('>500')}>{'>'} than 500$</li>
+              </ul>
             </div>
+          </div>
 
-            {/* Shipping */}
-            <div className="relative group">
-              <button
-                type="button"
-                className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex"
-              >
-                <img src={myImage3} alt="" className="h-[18px] pr-2" /> Shipping Time
-                <img src={myImage5} alt="" className="h-[18px] pl-2" />
-              </button>
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
-                <ul>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships overnight')}>Ships overnight</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1-2 business days')}>Ships in 1-2 business days</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 3-5 business days')}>Ships in 3-5 business days</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1 week')}>Ships within a week</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 2 weeks')}>Ships in two weeks</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1 month')}>Ships within a month</li>
-                </ul>
-              </div>
+          {/* Shipping */}
+          <div className="relative group">
+            <button
+              type="button"
+              className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex"
+            >
+              <img src={myImage3} alt="" className="h-[18px] pr-2" /> Shipping Time
+              <img src={myImage5} alt="" className="h-[18px] pl-2" />
+            </button>
+            {/* Dropdown Menu */}
+            <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
+              <ul>
+                <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships overnight')}>Ships overnight</li>
+                <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1-2 business days')}>Ships in 1-2 business days</li>
+                <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 3-5 business days')}>Ships in 3-5 business days</li>
+                <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1 week')}>Ships within a week</li>
+                <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 2 weeks')}>Ships in two weeks</li>
+                <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1 month')}>Ships within a month</li>
+              </ul>
             </div>
+          </div>
 
-            {/* Rating */}
-            <div className="relative group">
-              <button
-                type="button"
-                className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex"
-              >
-                <img src={myImage4} alt="" className="h-[18px] pr-2" /> Rating
-                <img src={myImage5} alt="" className="h-[18px] pl-2" />
-              </button>
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
-                <ul className="p-2">
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('1')}>1 Star</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('2')}>2 Stars</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('3')}>3 Stars</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('4')}>4 Stars</li>
-                  <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('5')}>5 Stars</li>
-                </ul>
-              </div>
+          {/* Rating */}
+          <div className="relative group">
+            <button
+              type="button"
+              className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex"
+            >
+              <img src={myImage4} alt="" className="h-[18px] pr-2" /> Rating
+              <img src={myImage5} alt="" className="h-[18px] pl-2" />
+            </button>
+            {/* Dropdown Menu */}
+            <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
+              <ul className="p-2">
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('1')}>1 Star</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('2')}>2 Stars</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('3')}>3 Stars</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('4')}>4 Stars</li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleRatingChange('5')}>5 Stars</li>
+              </ul>
             </div>
           </div>
         </div>

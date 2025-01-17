@@ -19,17 +19,17 @@ const Footer = () => {
     <>
     <div className='py-12'>
         <div className='flex p-8 mx-8 pb-3 font-jak justify-around  border-b-2 border-slate-300'>
-            <div className='text-xl border-r-2 border-slate-300 px-10 text-slate-600 '>
+            <div className='text-md border-r-2 border-slate-300 px-10 text-slate-600 '>
                 <div className='flex items-center gap-3 py-2'>
-               <img src={myImage13} alt="" className='h-8'/>
+               <img src={myImage13} alt="" className='h-6'/>
                <h3 className='py-2'>My Orders</h3>
                </div>
-               <div className='flex items-center gap-3 py-2'>
-               <img src={myImage12} alt="" className='h-8'/>
+               <div className='flex items-center gap-3  py-2'>
+               <img src={myImage12} alt="" className='h-6'/>
                <h3 className='py-2'>Store Locator</h3>
                </div>
-               <div className='flex items-center gap-3 py-2'>
-               <img src={myImage11} alt="" className='h-8'/>
+               <div className='flex items-center gap-3  py-2'>
+               <img src={myImage11} alt="" className='h-6'/>
                <h3 className='py-2'>Contact us</h3>
                </div>
             </div>
@@ -44,7 +44,7 @@ const Footer = () => {
                <h2 className='text-md text-slate-600'>About us</h2>
                 <h3 className='py-2 text-sm pt-3'>Our services</h3>
                 <h3 className='py-2 text-sm'>Return policy</h3>
-                <h3 className='py-2' text-sm>Careers</h3>
+                <h3 className='py-2 text-sm' >Careers</h3>
             </div>
             <div className='px-10'>
                <h2 className='text-md text-slate-600'>Help & Customer Service</h2>

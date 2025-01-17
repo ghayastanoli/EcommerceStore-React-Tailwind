@@ -44,10 +44,10 @@ const NavBar = () => {
               </ul>
             </div>
             <div>
-              <img src={myImage} alt="" className='h-[24px]' />
+              <img src={myImage} alt="" className='h-[30px]' />
             </div>
             <div>
-              <img src={myImage2} alt="" className='h-[24px]' />
+              <img src={myImage2} alt="" className='h-[30px]' />
             </div>
           </div>
           <div className='flex justify-center gap-10 font-jak list-none pt-2'>
