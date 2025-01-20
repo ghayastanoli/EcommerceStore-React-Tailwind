@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import productsData from '../products.json';
 import myImage from '../assets/filter.png';
 import myImage2 from '../assets/money.png';
@@ -79,6 +80,24 @@ const AllProducts = () => {
 
   return (
     <>
+
+    <div className='px-12 pt-4 font-jak'>
+                            <Link to="/" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="2"
+                                stroke="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                              </svg>
+                              Back to Home
+                            </Link>
+    
+            </div>
+
       <div className="text-center font-mont text-2xl p-6 flex justify-center font-medium">
         <h2 className="flex justify-center border-2 rounded-md border-orange-500 px-6 mt-8 text-orange-500">
           All Products
@@ -87,7 +106,7 @@ const AllProducts = () => {
       <div className="px-6 font-yak text-sm relative pb-2">
         <div className={`flex gap-4 items-center relative transition-transform duration-700 ease-in-out ${animateFilters ? 'translate-x-0 opacity-100' : 'translate-x-[150%] opacity-0'}`}>
           <div>
-          <button
+            <button
               type="button"
               className="bg-slate-200 text-slate-800 p-1 font-medium px-4 rounded-lg flex items-center"
             >
@@ -163,30 +182,31 @@ const AllProducts = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 font-jak">
         {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="border rounded-lg shadow-md p-4 bg-orange-100 hover:bg-orange-200 transition duration-200"
-          >
-            <img
-              src={product.thumbnail}
-              alt={product.images}
-              className="w-full object-contain h-[200px]  rounded-md"
-            />
-            <div className="px-1 py-4">
-              <div className="min-h-[60px]">
-                <h2 className="text-md font-semibold mt-2">{product.title}</h2>
+          <Link to={`/product/${product.id}`} key={product.id}>  {/* Wrap with Link */}
+            <div
+              className="border rounded-lg shadow-md p-4 bg-orange-100 hover:bg-orange-200 transition duration-200"
+            >
+              <img
+                src={product.thumbnail}
+                alt={product.images}
+                className="w-full object-contain h-[200px]  rounded-md"
+              />
+              <div className="px-1 py-4">
+                <div className="min-h-[60px]">
+                  <h2 className="text-md font-semibold mt-2">{product.title}</h2>
+                </div>
+                <p className="text-gray-700 text-sm">Price: {product.price} $</p>
+                <p className="text-gray-700 text-sm">
+                  You Save: <span className="font-semibold">{product.discountPercentage}%</span>
+                </p>
               </div>
-              <p className="text-gray-700 text-sm">Price: {product.price} $</p>
-              <p className="text-gray-700 text-sm">
-                You Save: <span className="font-semibold">{product.discountPercentage}%</span>
-              </p>
+              <div className="flex">
+                <button className="bg-orange-500 text-white px-4 py-2 text-sm rounded-md mt-3">
+                  Add to Cart
+                </button>
+              </div>
             </div>
-            <div className="flex">
-              <button className="bg-orange-500 text-white px-4 py-2 text-sm rounded-md mt-3">
-                Add to Cart
-              </button>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </>

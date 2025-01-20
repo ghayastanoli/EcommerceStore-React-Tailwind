@@ -24,10 +24,21 @@ const CategoryPage = () => {
 
   return (
     <div>
-        <div className='px-12'>
-            <div className='flex justify-start'>
-            <Link to="/" className='flex items-center gap-3 py-1 px-2 bg-white text-orange-500 mt-3 rounded-md font-jak border-2 hover:border-orange-500 transition duration-300 font-medium'>
-            <img src={myImage} alt="" className='h-8' /> Home</Link></div>
+        <div className='px-12 pt-4 font-jak'>
+                        <Link to="/" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            className="w-4 h-4"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                          </svg>
+                          Back to Home
+                        </Link>
+
         </div>
       <Listing 
         categories={getCategories(category)}

@@ -47,7 +47,10 @@ const NavBar = () => {
               <img src={myImage} alt="" className='h-[30px]' />
             </div>
             <div>
-              <img src={myImage2} alt="" className='h-[30px]' />
+              <Link to="/target-page" className='flex'>
+                <img src={myImage2} alt="" className="h-[30px]" />
+                <p className='text-xs'>0</p>
+              </Link>
             </div>
           </div>
           <div className='flex justify-center gap-10 font-jak list-none pt-2'>

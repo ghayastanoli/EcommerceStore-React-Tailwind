@@ -12,6 +12,7 @@ const CategoryCards = () => {
   return (
     <>
     <div className='py-8'>
+        <h1 className='font-mont text-3xl text-slate-600 px-16 font-normal py-8 pt-6'>Shop our most popular categories</h1>
     <div className='px-11 font-mont'>
     <div className=' p-4 py-3'>
         <div className='flex gap-4'>
