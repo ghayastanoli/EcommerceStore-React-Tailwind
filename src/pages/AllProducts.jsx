@@ -7,6 +7,15 @@ import myImage3 from '../assets/ship.png';
 import myImage4 from '../assets/star.png';
 import myImage5 from '../assets/down.png';
 import myImage6 from '../assets/rightarr.png';
+import { useCart } from '../context/CartContext';
+
+const Toast = ({ message, onClose }) => (
+  <div className="fixed top-4 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-40">
+    {message}
+    <button onClick={onClose} className="ml-4 font-jak">X</button>
+  </div>
+);
+
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -15,6 +24,25 @@ const AllProducts = () => {
   const [shippingTime, setShippingTime] = useState('');
   const [rating, setRating] = useState('');
   const [animateFilters, setAnimateFilters] = useState(false); // For triggering animation on load
+  const { dispatch } = useCart(); 
+  const [toast, setToast] = useState(null); 
+  
+
+  const handleAddToCart = (product) => {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+        quantity: 1,
+      },
+    });
+    setToast(`${product.title} added to cart!`);
+    setTimeout(() => setToast(null), 3000);
+  }
+
 
   useEffect(() => {
     const fetchProducts = () => {
@@ -80,6 +108,7 @@ const AllProducts = () => {
 
   return (
     <>
+    {toast && <Toast message={toast} onClose={() => setToast(null)} />}
 
     <div className='px-12 pt-4 font-jak'>
                             <Link to="/" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
@@ -201,9 +230,15 @@ const AllProducts = () => {
                 </p>
               </div>
               <div className="flex">
-                <button className="bg-orange-500 text-white px-4 py-2 text-sm rounded-md mt-3">
+              <button
+                  className="bg-orange-500 text-white px-4 py-2 text-sm rounded-md mt-3"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent navigation when adding to cart
+                  handleAddToCart(product);
+                    }}
+                  >
                   Add to Cart
-                </button>
+                  </button>
               </div>
             </div>
           </Link>

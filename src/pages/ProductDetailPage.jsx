@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import productsData from '../products.json';
+import { useCart } from '../context/CartContext';
+
+const Toast = ({ message, onClose }) => (
+  <div className="fixed top-4 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak">
+    {message}
+    <button onClick={onClose} className="ml-4 font-jak">X</button>
+  </div>
+);
 
 const ProductDetails = () => {
+    const { dispatch } = useCart(); 
   const { id } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [toast, setToast] = useState(null); 
 
   const product = productsData.find((p) => p.id === Number(id));
 
@@ -26,9 +36,25 @@ const ProductDetails = () => {
 
   const discountedPrice = product.price - product.price * (product.discountPercentage / 100);
 
+  const handleAddToCart = (product) => {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+        quantity: 1,
+      },
+    });
+    setToast(`${product.title} added to cart!`);
+    setTimeout(() => setToast(null), 3000); 
+  }
+
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+      {toast && <Toast message={toast} onClose={() => setToast(null)} />}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden font-jak">
           <div className="md:flex">
             {/* Image Gallery */}
@@ -165,6 +191,10 @@ const ProductDetails = () => {
                 </div>
               </div>
               <button
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent navigation when adding to cart
+                handleAddToCart(product);
+                  }}
                 className={`w-full py-3 px-8 rounded-md font-medium text-white ${
                   product.stock > 0
                     ? 'bg-orange-500 hover:bg-orange-600'

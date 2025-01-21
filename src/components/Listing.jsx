@@ -1,10 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import productsData from '../products.json';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+
+const Toast = ({ message, onClose }) => (
+  <div className="fixed top-4 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak">
+    {message}
+    <button onClick={onClose} className="ml-4 font-jak">X</button>
+  </div>
+);
 
 const Listing = ({ categories, category, pageTitle, limit }) => {
+  const { dispatch } = useCart();
   const [productsByCategory, setProductsByCategory] = useState({});
   const [showFullDescription, setShowFullDescription] = useState({});
+  const [toast, setToast] = useState(null); 
+
+  const handleAddToCart = (product) => {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+        quantity: 1,
+      },
+    });
+
+    setToast(`${product.title} added to cart!`);
+    setTimeout(() => setToast(null), 3000); 
+  };
 
   useEffect(() => {
     const fetchProducts = () => {
@@ -77,6 +103,7 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
 
   return (
     <div className="px-11">
+            {toast && <Toast message={toast} onClose={() => setToast(null)} />}
       <div className="text-center font-mont text-2xl p-6 flex justify-center font-medium">
         <h2 className="flex justify-center border-2 rounded-md border-orange-500 px-6 mt-8 text-orange-500">
           {pageTitle}
@@ -119,7 +146,7 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
                       <button
                         className="text-orange-500 underline mt-1"
                         onClick={(e) => {
-                          e.preventDefault(); // Prevent navigation when toggling description
+                          e.preventDefault(); 
                           toggleDescription(product.id);
                         }}
                       >
@@ -141,7 +168,10 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
                   <div className="flex">
                     <button
                       className="bg-orange-500 text-white px-4 py-2 text-sm rounded-md mt-3"
-                      onClick={(e) => e.preventDefault()} // Prevent navigation when clicking Add to Cart
+                      onClick={(e) => {
+                        e.preventDefault(); 
+                        handleAddToCart(product);
+                      }}
                     >
                       Add to Cart
                     </button>
@@ -152,6 +182,8 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
           </div>
         </div>
       ))}
+
+    
     </div>
   );
 };

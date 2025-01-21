@@ -13,6 +13,8 @@ import myImage11 from '../assets/email.png';
 import myImage12 from '../assets/loc.png';
 import myImage13 from '../assets/order.png';
 import myImage14 from '../assets/cards.png';
+import Logo from "../assets/zap.png";
+
 
 
 const Footer = () => {
@@ -62,15 +64,20 @@ const Footer = () => {
                 <h3 className='py-2 text-sm'>Clubcard Prices</h3>
             </div>
         </div>
-        <div className='pb-4 border-b-2 border-slate-300'>
-            <div className='flex pl-14 pt-6 gap-2'>
+        <div className='pb-4 border-b-2 border-slate-300 flex justify-between items-center px-14'>
+            <div>
+            <div className='flex  pt-6 gap-2'>
                 <img src={myImage2} alt="" className='h-8'/>
                 <img src={myImage3} alt="" className='h-8'/>
                 <img src={myImage4} alt="" className='h-8'/>
                 <img src={myImage5} alt="" className='h-8'/>
              </div>
-             <div className='pl-14 pt-4'>
+             <div className=' pt-4'>
                 <p className='text-sm text-slate-600'>© 2025 store.com. All rights reserved</p>
+             </div>
+             </div>
+             <div>
+                <img src={Logo} alt="" className='h-[50px]'/>
              </div>
         </div>
         <div className='flex pl-14 pt-6 gap-2 items-center'>

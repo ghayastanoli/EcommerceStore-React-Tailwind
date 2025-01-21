@@ -7,6 +7,8 @@ import CategoryPage from './pages/CategoryPage';
 import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetailPage';
 import ScrollToTop from './components/ScrollToTop';
+import AddToCartPage from './pages/AddToCartPage';
+import { CartProvider } from './context/CartContext'; 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,13 +18,17 @@ const router = createBrowserRouter(
       <Route path="/:category" element={<CategoryPage />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/product/:id" element={<ProductDetails />} />
+      <Route path='/AddToCartPage' element={<AddToCartPage />}/>
     </Route>
   )
 );
 
 const App = () => {
   return (
-        <RouterProvider router={router} />
+    // Wrap the RouterProvider with CartProvider
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   );
 };
 

@@ -16,6 +16,7 @@ const HomePage = () => {
       .join(' ');
   };
 
+
   return (
     <>
       <Hero/>
