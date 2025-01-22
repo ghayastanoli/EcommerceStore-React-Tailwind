@@ -70,7 +70,7 @@ const ProductCarousel = () => {
     <div className="px-11 mb-12 ">
         {toast && <Toast message={toast} onClose={() => setToast(null)} />}
       <div className=" p-6 flex">
-        <h2 className="flex justify-start rounded-md mt-8 font-mont text-3xl text-slate-600 font-normal">
+        <h2 className="flex justify-start rounded-md mt-8 font-mont text-xl sm:text-2xl md:text-3xl text-slate-600 font-normal">
           Featured Products
         </h2>
       </div>

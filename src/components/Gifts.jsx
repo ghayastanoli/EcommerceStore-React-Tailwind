@@ -10,7 +10,7 @@ const Gifts = () => {
     <>
     <div>
         <div className='px-16 py-8 max-w-[1350px] m-auto w-[100%]'>
-            <h2 className=" font-mont text-3xl text-slate-600 font-normal py-8 pb-10">Discover gifts for every occasion</h2>
+            <h2 className=" font-mont text-xl sm:text-2xl md:text-3xl text-slate-600 font-normal py-8 pb-10">Discover gifts for every occasion</h2>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 justify-items-center'>
                 <div className='font-jak text-slate-800 text-md text-center font-semibold p-4 border-white  rounded-lg  hover:border-slate-300 hover:shadow-lg hover:bg-orange-100 transition duration-200'>
                     <img src={myImage} alt="" className='h-[150px] border rounded-full border-slate-300'  />
