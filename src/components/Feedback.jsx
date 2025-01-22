@@ -8,6 +8,7 @@ const Feedback = () => {
         return (
             <>
             <div className='fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50'>
+                <div className='max-w-[1350px] m-auto w-[100%]'>
             <div className='bg-white w-96 p-6 rounded-lg shadow-lg relative font-jak'>
             <h3 className='text-lg font-semibold text-gray-800 mb-4'>What do you think about us?</h3>
             <textarea
@@ -23,6 +24,7 @@ const Feedback = () => {
                     >
                         Submit
                     </button>
+            </div>
             </div>
             </div>
             </>

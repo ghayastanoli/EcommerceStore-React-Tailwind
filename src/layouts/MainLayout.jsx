@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Banner from '../components/Banner';
 import Footer from '../components/Footer';
 import NavBar2 from '../components/NavBar2';
+import ScrollToTop from '../components/ScrollToTop';
 
 const MainLayout = () => {
   const location = useLocation();
@@ -11,6 +12,7 @@ const MainLayout = () => {
 
   return (
     <>
+      <ScrollToTop />
       {!isSignUpPage && <Banner />}
       {!isSignUpPage && <NavBar2 />}
       <Outlet />
