@@ -6,7 +6,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white font-mont">
       <div className="flex flex-col md:flex-row items-center bg-slate-100 shadow-lg rounded-lg overflow-hidden">
-        {/* Image Section */}
+        {/* Image Section.. */}
         <div className="w-full md:w-1/2">
           <img src={myImage} alt="Signup" className="w-full h-full object-cover" />
         </div>
