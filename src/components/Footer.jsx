@@ -70,10 +70,10 @@ const Footer = () => {
             <div className='flex justify-between items-center px-7 sm:px-14 max-w-[1350px] w-[100%] m-auto' >
             <div>
             <div className='flex  pt-6 gap-2'>
-                <img src={myImage2} alt="" className='h-8'/>
-                <img src={myImage3} alt="" className='h-8'/>
-                <img src={myImage4} alt="" className='h-8'/>
-                <img src={myImage5} alt="" className='h-8'/>
+                <img src={myImage2} alt="" className='h-6 sm:h-8'/>
+                <img src={myImage3} alt="" className='h-6 sm:h-8'/>
+                <img src={myImage4} alt="" className='h-6 sm:h-8'/>
+                <img src={myImage5} alt="" className='h-6 sm:h-8'/>
              </div>
              <div className=' pt-4'>
                 <p className='text-sm text-slate-600'>© 2025 store.com. All rights reserved</p>
@@ -85,12 +85,12 @@ const Footer = () => {
             </div>
         </div>
         <div className='flex pl-8 sm:pl-14 pt-6 gap-2 items-center max-w-[1350px] m-auto w-[100%]'>
-                <img src={myImage6} alt="" className='h-8'/>
-                <img src={myImage7} alt="" className='h-8'/>
-                <img src={myImage8} alt="" className='h-8'/>
-                <img src={myImage9} alt="" className='h-8'/>
-                <img src={myImage10} alt="" className='h-8'/>
-                <img src={myImage14} alt="" className='h-8'/>
+                <img src={myImage6} alt="" className='h-4 sm:h-8'/>
+                <img src={myImage7} alt="" className='h-4 sm:h-8'/>
+                <img src={myImage8} alt="" className='h-4 sm:h-8'/>
+                <img src={myImage9} alt="" className='h-4 sm:h-8'/>
+                <img src={myImage10} alt="" className='h-4 sm:h-8'/>
+                <img src={myImage14} alt="" className='h-4 sm:h-8'/>
              </div>
     </div>
     </>
