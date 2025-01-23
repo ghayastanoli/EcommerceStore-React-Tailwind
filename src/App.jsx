@@ -7,7 +7,7 @@ import CategoryPage from './pages/CategoryPage';
 import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetailPage';
 import AddToCartPage from './pages/AddToCartPage';
-import CheckoutPage from './pages/CheckOutPage';
+import CheckoutPage from './pages/CheckoutPage';
 import { CartProvider } from './context/CartContext'; 
 import SignIn from './pages/SignIn';
 
