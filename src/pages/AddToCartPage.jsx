@@ -24,7 +24,7 @@ const AddToCartPage = () => {
   const totalPrice = state.items.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="container mx-auto px-16 py-10 font-jak  my-4">
+    <div className="container mx-auto py-10 font-jak  my-4">
       <h1 className="text-3xl font-semibold text-center mb-6">Your Cart</h1>
 
       {/* Cart Items List */}
@@ -78,8 +78,8 @@ const AddToCartPage = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-between mt-4">
-          <Link to="/" className="bg-gray-500 text-white py-2 px-6 rounded-md hover:bg-gray-600">
+        <div className="flex flex-col gap-3 sm:gap-0 text-center sm:text-left sm:flex-row justify-between mt-4">
+          <Link to="/" className="sm:bg-gray-500  text-gray-500 sm:text-white py-2 px-6 rounded-md hover:bg-gray-600">
             Continue Shopping
           </Link>
           <Link

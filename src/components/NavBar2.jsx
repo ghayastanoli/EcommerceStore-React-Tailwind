@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import myImage from "../assets/zap.png";
 import myImage2 from "../assets/cart2.png";
-import myImage3 from "../assets/signin.png";
+import myImage3 from "../assets/signin.webp";
 import myImage4 from "../assets/search.png";
 import myImage5 from "../assets/menu.png";
 import { Link } from "react-router-dom";

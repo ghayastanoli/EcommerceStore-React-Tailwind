@@ -10,7 +10,7 @@ import myImage6 from '../assets/rightarr.png';
 import { useCart } from '../context/CartContext';
 
 const Toast = ({ message, onClose }) => (
-  <div className="fixed top-4 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-40">
+  <div className="fixed top-16 sm:top-44 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-40">
     {message}
     <button onClick={onClose} className="ml-4 font-jak">X</button>
   </div>
@@ -110,7 +110,7 @@ const AllProducts = () => {
     <>
     {toast && <Toast message={toast} onClose={() => setToast(null)} />}
 
-    <div className='px-4 sm:px-12 pt-4 font-jak'>
+    <div className='px-6 sm:px-12 pt-4 font-jak'>
                             <Link to="/" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -155,11 +155,11 @@ const AllProducts = () => {
             </button>
             {/* Dropdown Menu */}
             <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
-              <ul className="p-2">
-                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('<50')}>{'<'} than 50$</li>
-                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('50-100')}>Between 50$ & 100$</li>
-                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('100-200')}>Between 100$ & 200$</li>
-                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('>500')}>{'>'} than 500$</li>
+              <ul className="p-2 ">
+                <li className="py-1  px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('<50')}>{'<'} than 50$</li>
+                <li className="py-1  px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('50-100')}>Between 50$ & 100$</li>
+                <li className="py-1  px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('100-200')}>Between 100$ & 200$</li>
+                <li className="py-1  px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('>500')}>{'>'} than 500$</li>
               </ul>
             </div>
           </div>

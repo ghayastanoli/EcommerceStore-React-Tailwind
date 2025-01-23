@@ -33,7 +33,7 @@ const CategoryPage = () => {
 
   return (
     <div>
-      <div className="px-4 sm:px-12 pt-4 font-jak">
+      <div className="px-6 sm:px-12 pt-4 font-jak">
         <Link to="/" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"

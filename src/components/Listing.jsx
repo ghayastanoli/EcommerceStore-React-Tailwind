@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const Toast = ({ message, onClose }) => (
-  <div className="fixed top-4 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak">
+  <div className="fixed top-4 right-16 sm:top-44 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-100">
     {message}
     <button onClick={onClose} className="ml-4 font-jak">X</button>
   </div>
@@ -102,7 +102,7 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
   const showCategoryDivider = categories && categories.length > 0;
 
   return (
-    <div className="px-4 sm:px-11">
+    <div className="px-6 sm:px-11">
             {toast && <Toast message={toast} onClose={() => setToast(null)} />}
       <div className="text-center font-mont text-2xl p-6 flex justify-center font-medium">
         <h2 className="flex justify-center border-2 rounded-md border-orange-500 px-6 mt-8 text-orange-500">

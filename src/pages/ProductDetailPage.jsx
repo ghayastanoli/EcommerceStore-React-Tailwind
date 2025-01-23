@@ -4,7 +4,7 @@ import productsData from '../products.json';
 import { useCart } from '../context/CartContext';
 
 const Toast = ({ message, onClose }) => (
-  <div className="fixed top-4 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak">
+  <div className="fixed top-16 sm:top-44 text-sm right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-100">
     {message}
     <button onClick={onClose} className="ml-4 font-jak">X</button>
   </div>

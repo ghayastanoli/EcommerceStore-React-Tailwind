@@ -76,7 +76,7 @@ const Footer = () => {
                 <img src={myImage5} alt="" className='h-6 sm:h-8'/>
              </div>
              <div className=' pt-4'>
-                <p className='text-sm text-slate-600'>© 2025 store.com. All rights reserved</p>
+                <p className='text-xs sm:text-sm text-slate-600'>© 2025 store.com. All rights reserved</p>
              </div>
              </div>
              <div>

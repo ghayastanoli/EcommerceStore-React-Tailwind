@@ -9,14 +9,15 @@ import ScrollToTop from '../components/ScrollToTop';
 const MainLayout = () => {
   const location = useLocation();
   const isSignUpPage = location.pathname === '/sign-up';
+  const isSignInPage = location.pathname === '/sign-in';
 
   return (
     <>
       <ScrollToTop />
-      {!isSignUpPage && <Banner />}
-      {!isSignUpPage && <NavBar2 />}
+      {!isSignUpPage && !isSignInPage && <Banner />}
+      {!isSignUpPage && !isSignInPage && <NavBar2 />}
       <Outlet />
-      {!isSignUpPage && <Footer />}
+      {!isSignUpPage && !isSignInPage && <Footer />}
     </>
   );
 };
