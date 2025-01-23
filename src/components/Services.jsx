@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <>
     <div className='max-w-[1350px] m-auto w-[100%]'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-left lg:grid-cols-4 lg:gap-2 items-center py-4 px-2 sm:px-12 bg-white shadow-md mx-8 sm:mx-16 my-8 rounded-lg font-jak'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-left lg:grid-cols-4 lg:gap-2 items-center py-6 px-4 sm:px-12 bg-white shadow-md mx-4 sm:mx-16 my-8 rounded-lg font-jak'>
             <div className='flex gap-3 pb-6 lg:pb-0'>
                 <div><img src={myImage} alt="" className='h-[50px]'/></div>
                 <div>

@@ -41,7 +41,7 @@ const NavBar2 = () => {
 
       // Estimate the number of links that can fit based on available space
       const maxVisibleLinks = Math.max(
-        Math.floor((navWidth - 200) / 100), // Adjust 120 as the average width of a link
+        Math.floor((navWidth - 200) / 90), // Adjust 120 as the average width of a link
         0
       );
 
@@ -63,8 +63,8 @@ const NavBar2 = () => {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="bg-white px-1 sm:px-3">
-        <div className="flex items-center justify-around px-2 sm:px-6 py-2 gap-5 font-jak max-w-[1350px] m-auto w-[100%]">
+      <div className="bg-white px-1 sm:px-8">
+        <div className="flex items-center justify-around px-4 sm:px-6 py-2 gap-5 font-jak max-w-[1350px] m-auto w-[100%]">
           {/* Logo Section */}
           <div>
            <Link tp="/"> <img src={myImage} alt="Logo" className="h-12 sm:h-20" /> </Link>
@@ -102,7 +102,7 @@ const NavBar2 = () => {
               <li>
                 <Link
                   to="/sign-up"
-                  className="bg-white flex mr-6 p-2 px-3 rounded-b-xl text-sm hover:text-white transition-all duration-200"
+                  className="bg-white flex  p-2 px-3 rounded-b-xl text-sm hover:text-white transition-all duration-200"
                 >
                   <img src={myImage3} alt="" className="h-[35px]" />
                 </Link>
