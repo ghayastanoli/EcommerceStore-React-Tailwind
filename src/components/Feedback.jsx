@@ -43,7 +43,7 @@ const Feedback = () => {
 
   return (
     <>
-      <div className="py-5">
+      <div className="py-5 pt-10">
         <div className="bg-orange-200">
           <div className="py-10">
             <div className="flex justify-center">

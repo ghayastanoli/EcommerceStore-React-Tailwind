@@ -75,14 +75,14 @@ const NavBar2 = () => {
             <img
               src={myImage4}
               alt=""
-              className="absolute right-4 top-3 h-[25px]"
+              className="absolute right-3 top-2 sm:top-3 h-[20px] sm:h-[25px]"
             />
             <input
               type="text"
               value={query}
               onChange={handleSearchChange}
               placeholder="Zap Your Way to Amazing Finds!"
-              className="w-full px-3 py-3 border placeholder:text-white md:placeholder:text-slate-400 border-slate-400 rounded-lg shadow-sm focus:ring-2 focus:ring-gray-500 focus:outline-none focus:border-0"
+              className="w-full px-3 sm:py-3 py-1 border placeholder:text-white md:placeholder:text-slate-400 border-slate-400 rounded-lg shadow-sm focus:ring-2 focus:ring-gray-500 focus:outline-none focus:border-0"
             />
           </div>
 
