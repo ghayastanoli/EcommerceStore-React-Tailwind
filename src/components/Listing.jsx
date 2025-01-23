@@ -102,7 +102,7 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
   const showCategoryDivider = categories && categories.length > 0;
 
   return (
-    <div className="px-11">
+    <div className="px-4 sm:px-11">
             {toast && <Toast message={toast} onClose={() => setToast(null)} />}
       <div className="text-center font-mont text-2xl p-6 flex justify-center font-medium">
         <h2 className="flex justify-center border-2 rounded-md border-orange-500 px-6 mt-8 text-orange-500">

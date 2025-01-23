@@ -110,7 +110,7 @@ const AllProducts = () => {
     <>
     {toast && <Toast message={toast} onClose={() => setToast(null)} />}
 
-    <div className='px-12 pt-4 font-jak'>
+    <div className='px-4 sm:px-12 pt-4 font-jak'>
                             <Link to="/" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ const AllProducts = () => {
         </h2>
       </div>
       <div className="px-6 font-yak text-sm relative pb-2">
-        <div className={`flex gap-4 items-center relative transition-transform duration-700 ease-in-out ${animateFilters ? 'translate-x-0 opacity-100' : 'translate-x-[150%] opacity-0'}`}>
+        <div className={`flex flex-col sm:flex-row gap-4  items-left sm:items-center relative transition-transform duration-700 ease-in-out ${animateFilters ? 'translate-x-0 opacity-100' : 'translate-x-[150%] opacity-0'}`}>
           <div>
             <button
               type="button"
