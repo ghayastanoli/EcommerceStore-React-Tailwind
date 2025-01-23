@@ -70,7 +70,7 @@ const NavBar2 = () => {
           </div>
 
           {/* Search Bar Section - Hidden on mobile */}
-          <div className="hidden sm:block flex-1 max-w-4xl mx-auto relative inline-block gap-3">
+          <div className="hidden sm:block flex-1 max-w-4xl mx-auto relative gap-3">
             <img
               src={myImage4}
               alt=""
@@ -81,7 +81,7 @@ const NavBar2 = () => {
               value={query}
               onChange={handleSearchChange}
               placeholder="Zap Your Way to Amazing Finds!"
-              className="w-full px-3 py-3 border placeholder:text-slate-400 border-slate-400 rounded-lg shadow-sm focus:ring-2 focus:ring-gray-500 focus:outline-none focus:border-0"
+              className="w-full px-3 py-3 border placeholder:text-white md:placeholder:text-slate-400 border-slate-400 rounded-lg shadow-sm focus:ring-2 focus:ring-gray-500 focus:outline-none focus:border-0"
             />
           </div>
 
@@ -107,9 +107,9 @@ const NavBar2 = () => {
             {/* Hamburger Menu Button - Visible only on mobile */}
             <button
               onClick={() => setDrawerOpen(true)}
-              className="sm:hidden flex flex-col justify-between w-6 h-6"
+              className="sm:hidden flex flex-col justify-between "
             >
-              <img src={myImage5} alt="" className="h-[380px] mr-4" />
+              <img src={myImage5} alt="" className="h-[30px]" />
             </button>
           </div>
         </div>
@@ -170,7 +170,7 @@ const NavBar2 = () => {
               onClick={() => setDrawerOpen(false)}
               className="p-2 text-gray-600 hover:text-gray-900"
             >
-              X
+              ✖
             </button>
           </div>
 
@@ -182,7 +182,7 @@ const NavBar2 = () => {
                 value={query}
                 onChange={handleSearchChange}
                 placeholder="Search..."
-                className="w-full px-3 py-2 border rounded-lg"
+                className="w-full px-3 py-2 border rounded-lg "
               />
               <img
                 src={myImage4}
