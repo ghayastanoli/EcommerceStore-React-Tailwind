@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily:{
         sans: ['Roboto','sans-serif'],
+        backgroundPosition: {
+          'custom-position': '0px 40px',
+        },
     },
     },
   },

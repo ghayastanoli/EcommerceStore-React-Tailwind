@@ -29,12 +29,9 @@
 .font-jak{
     font-family: jakarta;
 }
-.font-jak-b{
-    font-family: jakarta;
+.custom-position{
+    background-position: 65%
 }
-.font-inter{
-    font-family: inter;
-}
-.font-cur{
-    font-family: cursive;
+.custom-position2{
+    background-position: 43%;
 }

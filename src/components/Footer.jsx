@@ -24,15 +24,15 @@ const Footer = () => {
         <div className='max-w-[1350px] m-auto w-[100%]'>
         <div className='flex flex-col sm:flex-row p-2 lg:p-8 lg:mx-8 pb-3 font-jak sm:justify-around  border-b-2 border-slate-300'>
             <div className='text-xs md:text-lg sm:border-r-2 border-slate-300 px-6 lg:px-10 text-slate-600 pb-3 sm:pb-0 flex justify-around gap-3 sm:block'>
-                <div className='flex items-center gap-3 py-2'>
+                <div className='flex items-center gap-3 py-2  cursor-pointer'>
                <img src={myImage13} alt="" className='h-6'/>
                <h3 className='py-2'>My Orders</h3>
                </div>
-               <div className='flex items-center gap-3  py-2'>
+               <div className='flex items-center gap-3  py-2  cursor-pointer'>
                <img src={myImage12} alt="" className='h-6'/>
                <h3 className='py-2'>Store Locator</h3>
                </div>
-               <div className='flex items-center gap-3  py-2'>
+               <div className='flex items-center gap-3  py-2 cursor-pointer'>
                <img src={myImage11} alt="" className='h-6'/>
                <h3 className='py-2'>Contact us</h3>
                </div>

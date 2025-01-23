@@ -22,10 +22,10 @@ const HomePage = () => {
       <Hero/>
       <Services/>
       <CategoryCards/>
-      <ProductCarousel />
-      <Ad/>
-      <Gifts/>
       <SaleBanner/>
+      <ProductCarousel />
+      <Gifts/>
+      <Ad/>
       <Feedback/>
     </>
   )

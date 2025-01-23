@@ -1,11 +1,10 @@
 import React from 'react'
-import myImage from '../assets/vectors/cart.png';
+import myImage from '../assets/vectors/cart.webp';
 import myImage2 from '../assets/ins.png';
 import myImage3 from '../assets/fb.png';
 import myImage4 from '../assets/x.png';
 import myImage5 from '../assets/wh.png';
-import myImage6 from '../assets/vectors/05.png';
-import myImage7 from '../assets/vectors/white.png';
+import myImage6 from '../assets/vectors/05.webp';
 
 
 
@@ -14,8 +13,8 @@ import myImage7 from '../assets/vectors/white.png';
 const SaleBanner = () => {
   return (
     <>
-    <div className='px-14 py-20'>
-    <div className='bg-gradient-to-r from-yellow-200  to-yellow-200 rounded-2xl'>
+    <div className='sm:px-14 py-10 sm:py-20'>
+    <div className='bg-gradient-to-r from-yellow-200  to-yellow-200 sm:rounded-2xl'>
     <div className='max-w-[1350px] m-auto w-[100%]'>
     <div className='flex flex-col-reverse sm:flex-row sm:justify-between justify-center '>
     <div className='flex justify-start pt-6 pl-4 lg:pl-20'>
@@ -28,10 +27,10 @@ const SaleBanner = () => {
     <div className='flex justify-end pt-0'>
         <div className='bg-orange-400 w-80 h-26 sm:w-80 sm:h-26 rounded-b-full'>
             <div className='flex justify-center sm:justify-end p-16 gap-3'>
-                <img src={myImage2} alt="" className='h-10'/>
-                <img src={myImage3} alt="" className='h-10'/>
-                <img src={myImage4} alt="" className='h-10'/>
-                <img src={myImage5} alt="" className='h-10'/>
+                <img src={myImage2} alt="" className='h-10 cursor-pointer'/>
+                <img src={myImage3} alt="" className='h-10 cursor-pointer'/>
+                <img src={myImage4} alt="" className='h-10 cursor-pointer'/>
+                <img src={myImage5} alt="" className='h-10 cursor-pointer'/>
             </div>
         </div>
     </div>

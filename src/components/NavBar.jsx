@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import myImage from '../assets/search.png';
-import myImage2 from '../assets/cart.png';
+import myImage2 from '../assets/cart2.png';
 import { useCart } from '../context/CartContext';
 
 const NavBar = () => {

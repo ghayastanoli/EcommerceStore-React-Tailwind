@@ -24,7 +24,7 @@ const AddToCartPage = () => {
   const totalPrice = state.items.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="container mx-auto py-10 font-jak">
+    <div className="container mx-auto px-16 py-10 font-jak  my-4">
       <h1 className="text-3xl font-semibold text-center mb-6">Your Cart</h1>
 
       {/* Cart Items List */}

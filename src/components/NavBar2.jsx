@@ -67,7 +67,7 @@ const NavBar2 = () => {
         <div className="flex items-center justify-around px-2 sm:px-6 py-2 gap-5 font-jak max-w-[1350px] m-auto w-[100%]">
           {/* Logo Section */}
           <div>
-            <img src={myImage} alt="Logo" className="h-[80px]" />
+           <Link tp="/"> <img src={myImage} alt="Logo" className="h-12 sm:h-20" /> </Link>
           </div>
 
           {/* Search Bar Section */}
