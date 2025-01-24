@@ -95,7 +95,7 @@ const CategoryCards = () => {
                 <button className='text-xs font-jak bg-green-700 text-white p-1 px-3 mt-3 rounded-sm'>SHOP NOW</button>
                 </div>
                 <div className='flex justify-end'>
-                    <img src={myImage6} alt="" className='sm:h-[250px] h-[220px] mt-[-20px] sm:mt-7 mr-4'/>
+                    <img src={myImage6} alt="" className='sm:h-[246px] h-[220px] mt-[-20px] sm:mt-7 mr-4'/>
                 </div>
             </div>
                 </Link>
