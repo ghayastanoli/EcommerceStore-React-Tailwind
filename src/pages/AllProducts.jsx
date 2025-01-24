@@ -128,12 +128,12 @@ const AllProducts = () => {
             </div>
 
       <div className="text-center font-mont text-2xl p-6 flex justify-center font-medium">
-        <h2 className="flex justify-center border-2 rounded-md border-orange-500 px-6 mt-8 text-orange-500">
+        <h2 className="flex justify-start rounded-md  px-6 pb-2 mt-8 text-slate-600 font-normal font-mont">
           All Products
         </h2>
       </div>
       <div className="px-6 font-yak text-sm relative pb-2">
-        <div className={`flex flex-col sm:flex-row gap-4  items-left sm:items-center relative transition-transform duration-700 ease-in-out ${animateFilters ? 'translate-x-0 opacity-100' : 'translate-x-[150%] opacity-0'}`}>
+        <div className={`flex flex-row flex-wrap gap-4 font-mont  items-left sm:items-center relative transition-transform duration-700 ease-in-out ${animateFilters ? 'translate-x-0 opacity-100' : 'translate-x-[150%] opacity-0'}`}>
           <div>
             <button
               type="button"
@@ -154,7 +154,7 @@ const AllProducts = () => {
               <img src={myImage5} alt="" className="h-[18px] pl-2" />
             </button>
             {/* Dropdown Menu */}
-            <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
+            <div className="absolute left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden z-40 top-7">
               <ul className="p-2 ">
                 <li className="py-1  px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('<50')}>{'<'} than 50$</li>
                 <li className="py-1  px-2 hover:bg-gray-100 cursor-pointer" onClick={() => handlePriceChange('50-100')}>Between 50$ & 100$</li>
@@ -174,7 +174,7 @@ const AllProducts = () => {
               <img src={myImage5} alt="" className="h-[18px] pl-2" />
             </button>
             {/* Dropdown Menu */}
-            <div className="absolute top-full left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden">
+            <div className="absolute left-0 bg-white shadow-lg rounded-md w-40  group-hover:block hidden z-40 top-7">
               <ul>
                 <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships overnight')}>Ships overnight</li>
                 <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleShippingChange('Ships in 1-2 business days')}>Ships in 1-2 business days</li>

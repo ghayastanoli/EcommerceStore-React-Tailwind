@@ -105,7 +105,7 @@ const Listing = ({ categories, category, pageTitle, limit }) => {
     <div className="px-6 sm:px-11">
             {toast && <Toast message={toast} onClose={() => setToast(null)} />}
       <div className="text-center font-mont text-2xl p-6 flex justify-center font-medium">
-        <h2 className="flex justify-center border-2 rounded-md border-orange-500 px-6 mt-8 text-orange-500">
+        <h2 className="flex justify-center  rounded-md text-slate-600 font-normal font-mont px-6 mt-8 ">
           {pageTitle}
         </h2>
       </div>

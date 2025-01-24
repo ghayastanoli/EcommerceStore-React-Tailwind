@@ -135,7 +135,7 @@ const NavBar2 = () => {
         >
           <ul className="flex gap-3 items-center">
             {visibleLinks.map((item, index) => (
-              <li key={index}>
+              <li key={index} >
                 <Link
                   to={item.to}
                   className="hover:border-orange-600 transition duration-200 hover:rounded-md p-1 hover:bg-orange-600"
