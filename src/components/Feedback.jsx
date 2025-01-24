@@ -11,7 +11,7 @@ const Feedback = () => {
           onClick={() => setShowModal(false)} // Close modal on background click
         >
           <div
-            className="w-[90%] max-w-[50%] min-w-[300px] min-h-[100px] h-[60%] bg-white p-6 rounded-lg shadow-lg relative font-jak flex flex-col justify-between"
+            className="w-[90%] max-w-[50%] min-w-[320px] min-h-[80px] h-[60%] bg-white p-6 rounded-lg shadow-lg relative font-jak flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()} // Prevent click event from closing modal
           >
             <button
@@ -20,13 +20,13 @@ const Feedback = () => {
             >
               ✖
             </button>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+            <h3 className="text-md xm:text-lg font-semibold text-gray-800 mb-4 text-center">
               What do you think about us?
             </h3>
             <textarea
               name="feedback"
               id="feedback"
-              className="w-full h-full max-h-[70%] border border-gray-300 rounded-md p-2 resize-none"
+              className="w-full h-full max-h-[70%] text-sm sm:text-md border border-gray-300 rounded-md p-2 resize-none"
               placeholder="Write your feedback here..."
             ></textarea>
             <button
