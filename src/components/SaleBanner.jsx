@@ -5,6 +5,7 @@ import myImage3 from '../assets/fb.png';
 import myImage4 from '../assets/x.png';
 import myImage5 from '../assets/wh.png';
 import myImage6 from '../assets/vectors/05.webp';
+import { Link } from 'react-router-dom';
 
 
 
@@ -42,7 +43,7 @@ const SaleBanner = () => {
             <h2 className='text-4xl xl:text-6xl font-bold text-orange-500'>MANY THINGS!</h2>
             <p className='text-sm lg:text-md font-jak max-w-[500px] pt-4'>Get ready for the biggest shopping event of the year! This Black Friday, enjoy massive discounts and exclusive deals on all your favorite items.</p>
             <p className='text-sm lg:text-md font-jak max-w-[500px] pt-2'>Don’t miss out—shop now and save big before it’s gone!</p>
-            <button type='button' className='py-3 w-[100%] mt-8 bg-white text-orange-500 font-bold font-jak tracking-wider shadow-lg text-md rounded-md hover:bg-orange-400 transition-all duration-200 hover:text-white'>DISCOVER MORE</button>
+           <Link to="/all-products"> <button type='button' className='py-3 w-[100%] mt-8 bg-white text-orange-500 font-bold font-jak tracking-wider shadow-lg text-md rounded-md hover:bg-orange-400 transition-all duration-200 hover:text-white'>DISCOVER MORE</button> </Link>
         </div>
         <div className=''>
             <img src={myImage6} alt="" className='' />

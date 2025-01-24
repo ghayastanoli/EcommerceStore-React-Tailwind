@@ -11,7 +11,7 @@ const Feedback = () => {
           onClick={() => setShowModal(false)} // Close modal on background click
         >
           <div
-            className="w-[90%] max-w-[50%] min-w-[320px] min-h-[80px] h-[60%] bg-white p-6 rounded-lg shadow-lg relative font-jak flex flex-col justify-between"
+            className="w-[90%] max-w-[50%] min-w-[320px]  h-[60%] bg-white p-6 rounded-lg shadow-lg relative font-jak flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()} // Prevent click event from closing modal
           >
             <button

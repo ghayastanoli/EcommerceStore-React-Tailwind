@@ -103,7 +103,7 @@ const NavBar2 = () => {
               <div className="relative">
                 <Link to="/AddToCartPage" className="flex items-center">
                   <img src={myImage2} alt="Cart" className="h-[35px]" />
-                  <span className="bg-orange-400 py-2 font-mont absolute left-7 border-2 border-white text-white font-medium rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                  <span className="bg-orange-400 py-2 font-mont absolute left-5 top-[-2px] border-2 border-white text-white font-medium rounded-full w-6 h-6 flex items-center justify-center text-xs">
                     {cartItemsCount}
                   </span>
                 </Link>

@@ -68,7 +68,7 @@ const ProductCarousel = () => {
     <div className="max-w-[1350px] m-auto w-[100%]">
       <div className="px-4 sm:px-12 mb-12 ">
         {toast && <Toast message={toast} onClose={() => setToast(null)} />}
-        <div className="p-6 flex justify-center sm:justify-normal">
+        <div className="p-6 pb-8 flex justify-center sm:justify-normal">
           <h2 className="flex justify-start rounded-md mt-8 font-mont  text-md  sm:text-2xl md:text-3xl text-slate-600 font-normal">
             Featured Products
           </h2>
