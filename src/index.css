@@ -10,23 +10,7 @@
     font-family: jakarta;
     src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf');
 }
-@font-face {
-    font-family: jakarta-b;
-    src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf');
-}
-@font-face {
-    font-family: inter;
-    src: url('./assets/fonts/Inter/static/Inter_18pt-Black.ttf');
-}
-@font-face {
-    font-family: cursive;
-    src: url('./assets/fonts/Cursive/AnandaBlackPersonalUseRegular-rg9Rx.ttf');
-}
-@layer utilities {
-    .last-odd-child {
-      @apply col-start-2 col-span-2;
-    }
-  }
+
 
 .font-mont{
     font-family: mont;

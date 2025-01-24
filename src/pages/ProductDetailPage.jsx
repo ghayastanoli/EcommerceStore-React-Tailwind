@@ -51,6 +51,11 @@ const ProductDetails = () => {
     setTimeout(() => setToast(null), 3000); 
   }
 
+  const suggestions = productsData
+    .filter((p) => p.category === product.category && p.id !== product.id)
+    .sort(() => 0.5 - Math.random()) 
+    .slice(0, 4)
+
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -143,9 +148,7 @@ const ProductDetails = () => {
                       viewBox="0 0 24 24"
                       strokeWidth="2"
                       stroke="currentColor"
-                      className={`w-5 h-5 ${
-                        index < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'
-                      }`}
+                      className={`w-5 h-5 ${index < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`}
                     >
                       <path
                         strokeLinecap="round"
@@ -180,7 +183,7 @@ const ProductDetails = () => {
                   <p className="text-gray-700">{product.category}</p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900">Stock</h3>
+                  <h3 className="text-sm font-medium font-mont text-gray-900">Stock</h3>
                   <p
                     className={`${
                       product.stock > 0 ? 'text-green-600' : 'text-red-600'
@@ -192,7 +195,7 @@ const ProductDetails = () => {
               </div>
               <button
                 onClick={(e) => {
-                  e.preventDefault(); // Prevent navigation when adding to cart
+                  e.preventDefault(); 
                 handleAddToCart(product);
                   }}
                 className={`w-full py-3 px-8 rounded-md font-medium text-white ${
@@ -205,6 +208,32 @@ const ProductDetails = () => {
                 {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
               </button>
             </div>
+          </div>
+        </div>
+        <div className="mt-12 font-jak">
+          <h2 className="text-2xl font-bold mb-6">You might also like</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {suggestions.map((suggestedProduct) => {
+              const suggesteddiscountedPrice = suggestedProduct.price - suggestedProduct.price * (suggestedProduct.discountPercentage / 100);
+
+              return (
+                <Link key={suggestedProduct.id} to={`/product/${suggestedProduct.id}`} className="bg-white hover:bg-orange-200 transition duration-200 shadow-lg rounded-lg overflow-hidden">
+                  <img
+                    src={suggestedProduct.thumbnail}
+                    alt={suggestedProduct.title}
+                    className="w-full h-48 object-contain"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-md font-semibold min-h-12">{suggestedProduct.title}</h3>
+                    <div className='flex gap-2 pt-3 justify-between '>
+                    <div><p className='font-semibold'>${suggesteddiscountedPrice.toFixed(2)}</p></div>
+                    <div><p className='text-xs font-medium font-mont text-white  bg-green-600 rounded-xl px-2 py-1'>{suggestedProduct.discountPercentage}% OFF</p></div>
+                    </div>
+                    <p className="text-gray-600 text-sm line-through font-medium">${suggestedProduct.price.toFixed(2)}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -4,11 +4,12 @@ import myImage2 from "../assets/cart2.png";
 import myImage3 from "../assets/signin.webp";
 import myImage4 from "../assets/search.png";
 import myImage5 from "../assets/menu.webp";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 const NavBar2 = () => {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
   const { state } = useCart();
   const cartItemsCount = state.items.reduce(
     (total, item) => total + item.quantity,
@@ -19,7 +20,6 @@ const NavBar2 = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const navRef = useRef(null);
 
-  
   const navItems = [
     { label: "SmartPhones", to: "/smartphones" },
     { label: "Laptops", to: "/laptops" },
@@ -27,12 +27,12 @@ const NavBar2 = () => {
     { label: "Skincare", to: "/skincare" },
     { label: "Groceries", to: "/groceries" },
     { label: "Watches", to: "/watches" },
-    { label: "Furniture", to: "/furniture" },
+    { label: "Essentials", to: "/furniture" },
     { label: "Clothing", to: "/clothing" },
-    { label: "Home Decoration", to: "/home-decoration" },
+    { label: "Décor", to: "/home-decoration" },
     { label: "Auto", to: "/auto" },
     { label: "Accessories", to: "/Jewelery & Accessories" },
-    { label: "All Products", to: "/all-products" },
+    { label: "Explore", to: "/all-products" },
   ];
 
   const handleResize = () => {
@@ -40,7 +40,7 @@ const NavBar2 = () => {
       const navWidth = navRef.current.offsetWidth;
       const totalItemsWidth = 1330;
       const maxVisibleLinks = Math.max(
-        Math.floor((navWidth - 200) / 90),
+        Math.floor((navWidth - 200) / 100),
         0
       );
 
@@ -55,9 +55,21 @@ const NavBar2 = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (query.trim()) {
+      navigate(`/search?q=${encodeURIComponent(query.trim())}`);
+      setQuery("");
+      if (isDrawerOpen) {
+        setDrawerOpen(false);
+      }
+    }
+  };
+
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
   };
+
   useEffect(() => {
     if (isDrawerOpen) {
       document.body.style.overflow = "hidden";
@@ -77,24 +89,27 @@ const NavBar2 = () => {
           {/* Logo Section */}
           <div>
             <Link to="/">
-              <img src={myImage} alt="Logo" className="h-12 md:h-20" />
+              <img src={myImage} alt="Logo" className="h-12 md:h-16" />
             </Link>
           </div>
 
           {/* Search Bar Section - Hidden on mobile */}
           <div className="hidden sm:block flex-1 max-w-4xl mx-auto relative gap-3">
-            <img
-              src={myImage4}
-              alt=""
-              className="absolute right-3 top-3 h-[25px]"
-            />
-            <input
-              type="text"
-              value={query}
-              onChange={handleSearchChange}
-              placeholder="Zap Your Way to Amazing Finds!"
-              className="w-full px-3 py-3 border placeholder:text-white md:placeholder:text-slate-400 border-slate-400 rounded-lg shadow-sm focus:ring-2 focus:ring-gray-500 focus:outline-none focus:border-0"
-            />
+            <form onSubmit={handleSearchSubmit}>
+              <img
+                src={myImage4}
+                alt=""
+                className="absolute right-3 top-3 h-[20px] cursor-pointer"
+                onClick={handleSearchSubmit}
+              />
+              <input
+                type="text"
+                value={query}
+                onChange={handleSearchChange}
+                placeholder="Zap Your Way to Amazing Finds!"
+                className="w-full px-3 py-2 border placeholder:text-white md:placeholder:text-slate-400 ring-2 ring-slate-200 rounded-lg shadow-sm focus:ring-2 focus:ring-orange-200 focus:outline-none focus:border-0"
+              />
+            </form>
           </div>
 
           {/* Cart and Sign-Up Section - Hidden on mobile */}
@@ -102,8 +117,8 @@ const NavBar2 = () => {
             <div className="hidden sm:flex space-x-4 items-center">
               <div className="relative">
                 <Link to="/AddToCartPage" className="flex items-center">
-                  <img src={myImage2} alt="Cart" className="h-[35px]" />
-                  <span className="bg-orange-400 py-2 font-mont absolute left-5 top-[-2px] border-2 border-white text-white font-medium rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                  <img src={myImage2} alt="Cart" className="h-[30px]" />
+                  <span className="bg-orange-400 py-2 font-mont absolute left-5 top-[-2px] border-2 border-white text-white font-medium rounded-full w-5 h-5 flex items-center justify-center text-xs">
                     {cartItemsCount}
                   </span>
                 </Link>
@@ -112,14 +127,14 @@ const NavBar2 = () => {
                 to="/sign-up"
                 className="bg-white flex p-2 px-3 rounded-b-xl text-sm hover:text-white transition-all duration-200"
               >
-                <img src={myImage3} alt="" className="h-[35px]" />
+                <img src={myImage3} alt="" className="h-[25px]" />
               </Link>
             </div>
 
             {/* Hamburger Menu Button - Visible only on mobile */}
             <button
               onClick={() => setDrawerOpen(true)}
-              className="sm:hidden flex flex-col justify-between "
+              className="sm:hidden flex flex-col justify-between"
             >
               <img src={myImage5} alt="" className="h-[30px]" />
             </button>
@@ -128,20 +143,24 @@ const NavBar2 = () => {
       </div>
 
       {/* Navigation Links - Hidden on mobile */}
-      <div className="hidden sm:block bg-orange-500 py-3 shadow-xl">
+      <div className="hidden sm:block bg-orange-500 py-2 shadow-xl">
         <div
           ref={navRef}
           className="flex justify-center font-mont px-12 text-md font-medium text-white"
         >
-          <ul className="flex gap-3 items-center">
+          <ul className="flex gap-4 items-center">
             {visibleLinks.map((item, index) => (
-              <li key={index} >
-                <Link
+              <li key={index}>
+                <NavLink
                   to={item.to}
-                  className="hover:border-orange-600 transition duration-200 hover:rounded-md p-1 hover:bg-orange-600"
+                  className="hover:border-orange-600 transition duration-200 hover:rounded-md p-1 px-2 hover:bg-orange-600"
+                  style={({ isActive }) => ({
+                    background: isActive ? "#e36414" : '',
+                    borderRadius: "10px",
+                  })}
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
 
@@ -188,20 +207,23 @@ const NavBar2 = () => {
 
           {/* Search Bar in Drawer */}
           <div className="p-4 border-b font-jak">
-            <div className="relative">
-              <input
-                type="text"
-                value={query}
-                onChange={handleSearchChange}
-                placeholder="Search..."
-                className="w-full px-3 py-2 border rounded-lg "
-              />
-              <img
-                src={myImage4}
-                alt=""
-                className="absolute right-3 top-3 h-[20px]"
-              />
-            </div>
+            <form onSubmit={handleSearchSubmit}>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={query}
+                  onChange={handleSearchChange}
+                  placeholder="Search..."
+                  className="w-full px-3 py-2 border rounded-lg"
+                />
+                <img
+                  src={myImage4}
+                  alt=""
+                  className="absolute right-3 top-3 h-[20px] cursor-pointer"
+                  onClick={handleSearchSubmit}
+                />
+              </div>
+            </form>
           </div>
 
           {/* Cart and Sign Up in Drawer */}

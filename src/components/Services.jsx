@@ -19,7 +19,7 @@ const Services = () => {
             <div className='flex gap-3 pb-6 lg:pb-0'>
                 <div><img src={myImage2} alt="" className='h-[50px]'/></div>
                 <div>
-                    <p className='text-md font-bold text-slate-600'>Free Rerurn</p>
+                    <p className='text-md font-bold text-slate-600'>Free Return</p>
                     <p className='text-sm text-slate-500'>Get free returns within 7 days</p>
                 </div>
             </div>

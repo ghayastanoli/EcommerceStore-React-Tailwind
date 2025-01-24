@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetailPage';
 import AddToCartPage from './pages/AddToCartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import SearchResults from './pages/SearchResults';
 import { CartProvider } from './context/CartContext'; 
 import SignIn from './pages/SignIn';
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path='/AddToCartPage' element={<AddToCartPage />}/>
       <Route path='/Checkout' element={<CheckoutPage/>}/>
       <Route path='sign-in' element={<SignIn/>}/>
+      <Route path='/search' element={<SearchResults />}/>
     </Route>
   )
 );

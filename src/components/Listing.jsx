@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const Toast = ({ message, onClose }) => (
-  <div className="fixed top-4 right-16 sm:top-44 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-100">
+  <div className="fixed top-20  sm:right-16 sm:top-44 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-100">
     {message}
     <button onClick={onClose} className="ml-4 font-jak">X</button>
   </div>
