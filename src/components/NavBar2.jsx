@@ -3,7 +3,7 @@ import myImage from "../assets/zap.png";
 import myImage2 from "../assets/cart2.png";
 import myImage3 from "../assets/signin.webp";
 import myImage4 from "../assets/search.png";
-import myImage5 from "../assets/menu.png";
+import myImage5 from "../assets/menu.webp";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
@@ -19,6 +19,7 @@ const NavBar2 = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const navRef = useRef(null);
 
+  
   const navItems = [
     { label: "SmartPhones", to: "/smartphones" },
     { label: "Laptops", to: "/laptops" },
@@ -57,15 +58,26 @@ const NavBar2 = () => {
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
   };
+  useEffect(() => {
+    if (isDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isDrawerOpen]);
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="bg-white px-1 sm:px-8">
+      <div className="bg-white px-1 md:px-8 shadow-md sm:shadow-none">
         <div className="flex items-center justify-between px-4 sm:px-6 py-2 gap-5 font-jak max-w-[1350px] m-auto w-[100%]">
           {/* Logo Section */}
           <div>
             <Link to="/">
-              <img src={myImage} alt="Logo" className="h-12 sm:h-20" />
+              <img src={myImage} alt="Logo" className="h-12 md:h-20" />
             </Link>
           </div>
 

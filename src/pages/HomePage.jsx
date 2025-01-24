@@ -24,8 +24,8 @@ const HomePage = () => {
       <CategoryCards/>
       <SaleBanner/>
       <ProductCarousel />
-      <Gifts/>
       <Ad/>
+      <Gifts/>
       <Feedback/>
     </>
   )

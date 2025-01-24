@@ -99,7 +99,7 @@ const ProductCarousel = () => {
                 </div>
                 <div className="px-1 py-4">
                   <div className="min-h-[60px]">
-                    <h2 className="text-xl font-semibold mt-2 tracking-wide">{product.title}</h2>
+                    <h2 className="text-[20px] font-semibold mt-2 tracking-normal">{product.title}</h2>
                   </div>
                   <div className="min-h-[90px]">
                     <h4 className="text-md font-normal mt-2 min-h-[80px]">
@@ -107,7 +107,7 @@ const ProductCarousel = () => {
                         ? product.description.substring(0, 70) + '...'
                         : product.description}
                     </h4>
-                    <button
+                    {/* <button
                       className="text-orange-500 underline mt-1"
                       onClick={(e) => {
                         e.preventDefault();
@@ -115,7 +115,7 @@ const ProductCarousel = () => {
                       }}
                     >
                       {showFullDescription[product.id] ? 'Show Less' : 'Read More'}
-                    </button>
+                    </button> */}
                   </div>
                   <p className="text-gray-700 text-md pt-3">Price: {product.price} $</p>
                   <p className="text-gray-700 text-md">

@@ -69,7 +69,7 @@ const Footer = () => {
         <div className='pb-4 border-b-2 border-slate-300 '>
             <div className='flex justify-between items-center px-7 sm:px-14 max-w-[1350px] w-[100%] m-auto' >
             <div>
-            <div className='flex  pt-6 gap-2'>
+            <div className='flex  pt-6  gap-1 sm:gap-2'>
                 <img src={myImage2} alt="" className='h-6 sm:h-8'/>
                 <img src={myImage3} alt="" className='h-6 sm:h-8'/>
                 <img src={myImage4} alt="" className='h-6 sm:h-8'/>
@@ -84,7 +84,7 @@ const Footer = () => {
              </div>
             </div>
         </div>
-        <div className='flex pl-8 sm:pl-14 pt-6 gap-2 items-center max-w-[1350px] m-auto w-[100%]'>
+        <div className='flex pl-8 sm:pl-14 pt-6 gap-1 sm:gap-2 items-center max-w-[1350px] m-auto w-[100%]'>
                 <img src={myImage6} alt="" className='h-4 sm:h-8'/>
                 <img src={myImage7} alt="" className='h-4 sm:h-8'/>
                 <img src={myImage8} alt="" className='h-4 sm:h-8'/>

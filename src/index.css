@@ -22,6 +22,11 @@
     font-family: cursive;
     src: url('./assets/fonts/Cursive/AnandaBlackPersonalUseRegular-rg9Rx.ttf');
 }
+@layer utilities {
+    .last-odd-child {
+      @apply col-start-2 col-span-2;
+    }
+  }
 
 .font-mont{
     font-family: mont;

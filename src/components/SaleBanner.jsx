@@ -13,18 +13,18 @@ import myImage6 from '../assets/vectors/05.webp';
 const SaleBanner = () => {
   return (
     <>
-    <div className='sm:px-14 py-10 sm:py-20'>
+    <div className='sm:px-14   sm:pb-0'>
     <div className='bg-gradient-to-r from-yellow-200  to-yellow-200 sm:rounded-2xl'>
     <div className='max-w-[1350px] m-auto w-[100%]'>
     <div className='flex flex-col-reverse sm:flex-row sm:justify-between justify-center '>
-    <div className='flex justify-start pt-6 pl-4 lg:pl-20'>
-        <img src={myImage} alt="" className='h-20 sm:h-36' />
+    <div className='flex justify-start  md:ml-36 lg:ml-0 pt-6 pl-4 lg:pl-20'>
+        <img src={myImage} alt="" className='h-20 md:h-32 sm:h-36' />
         {/* <div>
             <h2 className='text-4xl pt-2 font-jak font-semibold'>ONLINE</h2>
             <h2 className='text-3xl mt-[-12px] ml-16 font-cur text-orange-500'>store</h2>
         </div> */}
     </div>
-    <div className='flex justify-end pt-0'>
+    <div className='flex justify-center sm:justify-end pt-0'>
         <div className='bg-orange-400 w-80 h-26 sm:w-80 sm:h-26 rounded-b-full'>
             <div className='flex justify-center sm:justify-end p-16 gap-3'>
                 <img src={myImage2} alt="" className='h-10 cursor-pointer'/>
@@ -35,8 +35,8 @@ const SaleBanner = () => {
         </div>
     </div>
     </div>
-    <div className='flex flex-col lg:flex-row justify-between  pt-4 items-start p-4 pb-0'>
-        <div className='font-mont pl-4 lg:pl-20'>
+    <div className='flex flex-col lg:flex-row justify-between  pt-4 items-center lg:items-start p-4 pb-0'>
+        <div className='font-mont lg:pl-20'>
             <h3 className='text-xl xl:2xl font-bold pb-4'>BLACK FRIDAY SALE</h3>
             <h2 className='text-6xl xl:text-8xl font-bold text-orange-500 '>ONE SALE</h2>
             <h2 className='text-4xl xl:text-6xl font-bold text-orange-500'>MANY THINGS!</h2>

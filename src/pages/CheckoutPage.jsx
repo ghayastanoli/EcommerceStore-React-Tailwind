@@ -54,7 +54,7 @@ const CheckoutPage = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                    className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                     required
                   />
                 </div>
@@ -65,7 +65,7 @@ const CheckoutPage = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full  rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                    className="mt-1 py-1 block w-full  rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                     required
                   />
                 </div>
@@ -76,7 +76,7 @@ const CheckoutPage = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                    className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                     required
                   />
                 </div>
@@ -94,7 +94,7 @@ const CheckoutPage = () => {
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                    className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                     required
                   />
                 </div>
@@ -106,7 +106,7 @@ const CheckoutPage = () => {
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                      className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                       required
                     />
                   </div>
@@ -117,7 +117,7 @@ const CheckoutPage = () => {
                       name="postalCode"
                       value={formData.postalCode}
                       onChange={handleInputChange}
-                      className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                      className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                       required
                     />
                   </div>
@@ -163,7 +163,7 @@ const CheckoutPage = () => {
                         name="cardNumber"
                         value={formData.cardNumber}
                         onChange={handleInputChange}
-                        className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                        className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                         required
                       />
                     </div>
@@ -176,7 +176,7 @@ const CheckoutPage = () => {
                           value={formData.expiryDate}
                           onChange={handleInputChange}
                           placeholder="MM/YY"
-                          className="mt-1 px-2 block w-full rounded-md border-2 border-gray-200 shadow-sm focus:outline-none  focus:border-orange-200"
+                          className="mt-1 py-1 px-2 block w-full rounded-md border-2 border-gray-200 shadow-sm focus:outline-none  focus:border-orange-200"
                           required
                         />
                       </div>
@@ -187,7 +187,7 @@ const CheckoutPage = () => {
                           name="cvv"
                           value={formData.cvv}
                           onChange={handleInputChange}
-                          className="mt-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
+                          className="mt-1 py-1 block w-full rounded-md border-2 border-gray-200 shadow-sm px-2 focus:outline-none  focus:border-orange-200"
                           required
                         />
                       </div>
@@ -201,7 +201,7 @@ const CheckoutPage = () => {
 
         {/* Order Summary */}
         <div className="lg:w-1/3">
-          <div className="bg-white p-6 rounded-lg shadow-md sticky top-4">
+          <div className="bg-white p-6 rounded-lg shadow-md sticky top-36">
             <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
             <div className="space-y-4">
               {state.items.map((item) => (
