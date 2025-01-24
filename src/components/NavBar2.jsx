@@ -177,7 +177,7 @@ const NavBar2 = () => {
         <div className="h-full flex flex-col font-jak">
           {/* Drawer Header */}
           <div className="p-4 border-b flex justify-between items-center">
-            <h2 className="text-xl font-semibold">Menu</h2>
+            <h2 className="text-xl font-semibold text-orange-500">ZappyBuy</h2>
             <button
               onClick={() => setDrawerOpen(false)}
               className="p-2 text-gray-600 hover:text-gray-900"
@@ -199,7 +199,7 @@ const NavBar2 = () => {
               <img
                 src={myImage4}
                 alt=""
-                className="absolute right-3 top-2 h-[20px]"
+                className="absolute right-3 top-3 h-[20px]"
               />
             </div>
           </div>

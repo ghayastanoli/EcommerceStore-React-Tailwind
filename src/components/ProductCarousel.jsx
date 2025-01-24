@@ -117,7 +117,7 @@ const ProductCarousel = () => {
                       {showFullDescription[product.id] ? 'Show Less' : 'Read More'}
                     </button> */}
                   </div>
-                  <p className="text-gray-700 text-md pt-3">Price: {product.price} $</p>
+                  <p className="text-gray-700 text-md">Price: {product.price} $</p>
                   <p className="text-gray-700 text-md">
                     You Save: <span className="font-semibold">{product.discountPercentage}%</span>
                   </p>
