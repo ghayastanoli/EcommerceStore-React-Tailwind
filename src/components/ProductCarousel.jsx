@@ -88,16 +88,16 @@ const ProductCarousel = () => {
           itemClass="carousel-item-padding-40-px px-4"
         >
           {randomProducts.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
-              <div className="border rounded-lg shadow-md p-4 bg-orange-100 hover:bg-orange-200 transition duration-200 h-full font-jak">
-                <div className="flex justify-center">
+            <Link to={`/product/${product.id}`} key={product.id} className='hover:bg-orange-200'>
+              <div className="border rounded-lg shadow-md bg-white hover:bg-orange-200 transition duration-200 h-full font-jak">
+                <div className="flex justify-center ">
                   <img
                     src={product.thumbnail}
                     alt={product.title}
                     className="object-contain h-[200px] w-[200px] rounded-md"
                   />
                 </div>
-                <div className="px-1 py-4">
+                <div className="px-4 py-4 bg-orange-100 ">
                   <div className="min-h-[60px]">
                     <h2 className="text-[20px] font-semibold mt-2 tracking-normal">{product.title}</h2>
                   </div>
@@ -122,7 +122,7 @@ const ProductCarousel = () => {
                     You Save: <span className="font-semibold">{product.discountPercentage}%</span>
                   </p>
                 </div>
-                <div className="flex">
+                <div className="flex bg-orange-100 px-4 pb-4">
                   <button
                     className="bg-orange-500 text-white px-4 py-2 text-sm rounded-md mt-3"
                     onClick={(e) => handleAddToCart(e, product)}
