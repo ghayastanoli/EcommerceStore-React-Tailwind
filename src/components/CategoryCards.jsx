@@ -14,7 +14,7 @@ const CategoryCards = () => {
     <div className='py-8 max-w-[1350px] m-auto w-[100%]'>
         <h1 className='font-mont text-md text-center sm:text-left sm:text-2xl md:text-3xl text-slate-600 px-4 sm:px-16  font-normal py-8 pt-6'>Shop our most popular categories</h1>
     <div className='px-2 sm:px-11 font-mont'>
-    <div className=' p-4 py-3'>
+    <div className=' p-4 px-5 py-3'>
         <div className='flex flex-col min-[1120px]:flex-row gap-4'>
             <div className='w-[100%] min-[1120px]:w-[55%]'>
                 <Link to="/furniture">
@@ -31,9 +31,9 @@ const CategoryCards = () => {
             </Link>
             </div>
             <div className='flex gap-4 w-[100%] min-[1120px]:w-[55%]'>
-            <div className=' w-[100%]  px-3 bg-blue-200 rounded-xl shadow-md hover:bg-blue-300'>
+            <div className=' w-[100%]  bg-blue-200 rounded-xl shadow-md hover:bg-blue-300'>
             <Link to="/mens-shoes">
-                <div className='pt-12'>
+                <div className='pt-12  px-3'>
                 <h3 className='text-xs sm:text-md text-blue-500 '>Clothing & Shoes</h3>
                 <h1 className='text-md sm:2xl xl:text-3xl font-bold text-gray-600'>Sneakers</h1>
                 </div>
@@ -42,9 +42,9 @@ const CategoryCards = () => {
                 </div>
             </Link>
             </div>
-            <div className=' w-[100%]  px-3 bg-yellow-200 rounded-xl shadow-md hover:bg-yellow-300'>
+            <div className=' w-[100%]  bg-yellow-200 rounded-xl shadow-md hover:bg-yellow-300'>
                 <Link to="womens-bags">
-                <div className='pt-12'>
+                <div className='pt-12  px-3'>
                 <h3 className='text-xs sm:text-md text-yellow-600  '>Bags & Beyond</h3>
                 <h1 className='text-md sm:2xl xl:text-3xl font-bold text-gray-600'>Perfect Packs</h1>
                 </div>
@@ -60,23 +60,23 @@ const CategoryCards = () => {
     </div>
     
     <div className='px-2 sm:px-11 font-mont '>
-    <div className=' p-4 py-3 pt-1'>
+    <div className=' p-4 px-5 py-3 pt-1'>
         <div className='flex flex-col min-[1120px]:flex-row  gap-4'>
             <div className='flex gap-4 w-[100%] min-[1120px]:w-[55%]'>
-            <div className='gap-3 px-3  bg-[#8eb19d] rounded-xl w-[100%] shadow-md hover:bg-[#7aa58c]'>
+            <div className='gap-3 bg-[#8eb19d] rounded-xl w-[100%] shadow-md hover:bg-[#7aa58c]'>
                 <Link to="/sunglasses">
-                <div className='pt-12'>
+                <div className='pt-12 px-3'>
                 <h3 className='text-xs sm:text-md text-[#416651] '>Eyewear & Style</h3>
                 <h1 className='text-md sm:2xl xl:text-3xl font-bold text-gray-600'>Frame Flair</h1>
                 </div>
                 <div className='flex justify-center'>
-                    <img src={myImage4} alt="" className='sm:h-[80px] h-[60px] mt-8'/>
+                    <img src={myImage4} alt="" className='sm:h-[80px] h-[50px] mt-8'/>
                 </div>
                 </Link>
             </div>
-            <div className=' w-[100%]  px-3 bg-red-200 rounded-xl shadow-md hover:bg-red-300'>
+            <div className=' w-[100%]  bg-red-200 rounded-xl shadow-md hover:bg-red-300'>
                 <Link to="/mobile-accessories">
-                <div className='pt-12'>
+                <div className='pt-12 px-3'>
                 <h3 className='text-xs sm:text-md text-red-700 '>Tech & Gadgets</h3>
                 <h1 className='text-md sm:2xl xl:text-3xl font-bold text-gray-600'>Smart Solutions</h1>
                 </div>

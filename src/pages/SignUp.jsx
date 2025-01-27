@@ -15,7 +15,7 @@ const SignUp = () => {
         <div className="w-full md:w-1/2 p-8 pt-6">
           <h2 className="text-4xl font-bold text-gray-800 text-left mb-4">Sign Up</h2>
           <p className="text-left text-sm text-gray-600 mt-1 mb-8">
-            Already have an account? <a href="sign-in" className="text-orange-500 hover:underline">Log in</a>
+            Already have an account?  <Link to="/sign-in" className="text-orange-500 hover:underline">Sign in</Link>
           </p>
           <form>
             <div className="mb-4">

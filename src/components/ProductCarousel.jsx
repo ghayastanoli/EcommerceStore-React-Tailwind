@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const Toast = ({ message, onClose }) => (
-    <div className="fixed top-16 sm:top-44 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-40 z-100">
+    <div className="fixed top-16 sm:top-44 right-4 bg-green-400 text-white py-2 px-4 rounded shadow-md font-jak z-40">
       {message}
       <button onClick={onClose} className="ml-4 font-jak">X</button>
     </div>
@@ -17,10 +17,17 @@ const ProductCarousel = () => {
   const [showFullDescription, setShowFullDescription] = useState({});
   const [toast, setToast] = useState(null);
 
+  // Filter out products from 'smartphones' and 'vehicle' categories
+  const filteredProducts = useMemo(() => {
+    return productsData.filter(
+      (product) => product.category !== 'smartphones' && product.category !== 'vehicle'
+    );
+  }, []);
+
   // Memoize random products so they don't change on re-render
   const randomProducts = useMemo(() => {
-    return productsData.sort(() => Math.random() - 0.5).slice(0, 10);
-  }, []); // Empty dependency array ensures it runs only once
+    return filteredProducts.sort(() => Math.random() - 0.5).slice(0, 10);
+  }, [filteredProducts]);
 
   const responsive = {
     superLargeDesktop: {
@@ -107,15 +114,6 @@ const ProductCarousel = () => {
                         ? product.description.substring(0, 70) + '...'
                         : product.description}
                     </h4>
-                    {/* <button
-                      className="text-orange-500 underline mt-1"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleDescription(product.id);
-                      }}
-                    >
-                      {showFullDescription[product.id] ? 'Show Less' : 'Read More'}
-                    </button> */}
                   </div>
                   <p className="text-gray-700 text-md">Price: {product.price} $</p>
                   <p className="text-gray-700 text-md">

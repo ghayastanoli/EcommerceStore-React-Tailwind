@@ -148,7 +148,7 @@ const NavBar2 = () => {
           ref={navRef}
           className="flex justify-center font-mont px-12 text-md font-medium text-white"
         >
-          <ul className="flex gap-4 items-center">
+          <ul className="flex gap-[1.1rem] items-center">
             {visibleLinks.map((item, index) => (
               <li key={index}>
                 <NavLink

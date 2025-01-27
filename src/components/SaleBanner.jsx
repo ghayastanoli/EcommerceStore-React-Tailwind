@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 const SaleBanner = () => {
   return (
     <>
-    <div className='sm:px-14   sm:pb-0'>
+    <div className='sm:px-16   sm:pb-0'>
     <div className='bg-gradient-to-r from-yellow-200  to-yellow-200 sm:rounded-2xl'>
     <div className='max-w-[1350px] m-auto w-[100%]'>
     <div className='flex flex-col-reverse sm:flex-row sm:justify-between justify-center '>

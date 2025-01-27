@@ -15,7 +15,7 @@ const SignUp = () => {
         <div className="w-full md:w-1/2 p-8 pt-6">
           <h2 className="text-4xl font-bold text-gray-800 text-left mb-4">Sign In</h2>
           <p className="text-left text-sm text-gray-600 mt-1 mb-8">
-            New to ZappyBuy? <a href="sign-up" className="text-orange-500 hover:underline">Sign Up / Register</a>
+            New to ZappyBuy? <Link to="/sign-up" className="text-orange-500 hover:underline">Sign Up / Register</Link>
           </p>
           <form>
             
